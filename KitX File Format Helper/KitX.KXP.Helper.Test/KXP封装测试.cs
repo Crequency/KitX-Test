@@ -1,13 +1,13 @@
-using KitX.Web.Rules;
+锘縰sing KitX.Web.Rules;
 using System.Text.Json;
 
 namespace KitX.KXP.Helper.Test
 {
     [TestClass]
-    public class KXP封装测试
+    public class KXP灏佽娴嬭瘯
     {
         [TestMethod]
-        public void 基准测试()
+        public void 鍩哄噯娴嬭瘯()
         {
             string baseDir = @"D:\tmp\";
             Encoder encoder = new(new()
@@ -38,46 +38,32 @@ namespace KitX.KXP.Helper.Test
                     },
                     DisplayName = new()
                     {
-                        { "zh-cn", "显示名称" },
-                        { "zh-cnt", "顯示名稱" },
+                        { "zh-cn", "鏄剧ず鍚嶇О" },
+                        { "zh-cnt", "椤ず鍚嶇ū" },
                         { "en-us", "DisplayName" },
                     },
-                    Functions = new()
+                    Functions = new List<Function>()
                     {
-                        FunctionsDisplayName = new()
+                        new Function()
                         {
+                            DisplayNames = new Dictionary<string, string>()
                             {
-                                "FunctionA",
-                                new()
-                                {
-                                    { "zh-cn", "某个方法" },
-                                    { "zh-cnt", "某個方法" },
-                                    { "en-us", "One Function" }
-                                }
-                            }
-                        },
-                        FunctionParameters = new()
-                        {
+                                { "zh-cn", "鍔熻兘鍚嶇О" },
+                                { "en-us", "FunctionName" }
+                            },
+                            Parameters = new Dictionary<Dictionary<string, string>, string>()
                             {
-                                "FunctionA",
-                                new()
                                 {
-                                    ForeParameters = new()
+                                    new Dictionary<string, string>()
                                     {
-                                        new()
-                                        {
-                                            Name = "ParameterA",
-                                            DisplayName = new()
-                                            {
-                                                { "zh-cn", "参数A" }
-                                            },
-                                            Type = "string"
-                                        }
+                                        { "zh-cn", "鍙傛暟1" },
+                                        { "en-us", "Parameter1" }
                                     },
-                                    HasAppendParameters = false,
-                                    ReturnValueType = "void"
+                                    "string"
                                 }
-                            }
+                            },
+                            HasAppendParameters = false,
+                            ReturnValueType = "void"
                         }
                     },
                     IconInBase64 = "IconInBase64",
