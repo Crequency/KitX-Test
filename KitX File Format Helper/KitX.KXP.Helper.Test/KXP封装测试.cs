@@ -51,16 +51,20 @@ namespace KitX.KXP.Helper.Test
                                 { "zh-cn", "功能名称" },
                                 { "en-us", "FunctionName" }
                             },
-                            Parameters = new Dictionary<Dictionary<string, string>, string>()
+                            Parameters = new Dictionary<string, Dictionary<string, string>>()
                             {
                                 {
+                                    "par1",
                                     new Dictionary<string, string>()
                                     {
                                         { "zh-cn", "参数1" },
                                         { "en-us", "Parameter1" }
-                                    },
-                                    "string"
+                                    }
                                 }
+                            },
+                            ParametersType = new List<string>()
+                            {
+                                "void"
                             },
                             HasAppendParameters = false,
                             ReturnValueType = "void"
